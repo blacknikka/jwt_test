@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class ApiController extends Controller
 {
-    function login() {
+    private function login()
+    {
         $credentials = request(['email', 'password']);
 
         if (! $token = auth("api")->attempt($credentials)) {
